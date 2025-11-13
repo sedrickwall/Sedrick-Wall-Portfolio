@@ -85,7 +85,7 @@ export default function Community() {
             </p>
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground hover-elevate active-elevate-2 font-semibold"
+              className="bg-primary text-primary-foreground hover-glow font-semibold"
               onClick={() => window.open("https://menonmission.org", "_blank")}
               data-testid="button-visit-mom"
             >
@@ -214,7 +214,7 @@ export default function Community() {
             </p>
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground hover-elevate active-elevate-2 font-semibold"
+              className="bg-primary text-primary-foreground hover-glow font-semibold"
               onClick={() => window.open("https://menonmission.org", "_blank")}
               data-testid="button-visit-mom-footer"
             >

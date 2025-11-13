@@ -57,7 +57,7 @@ export default function RealEstate() {
             </p>
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground hover-elevate active-elevate-2 font-semibold"
+              className="bg-primary text-primary-foreground hover-glow font-semibold"
               onClick={() => window.open("https://lvenestates.com", "_blank")}
               data-testid="button-visit-lven"
             >
@@ -130,7 +130,7 @@ export default function RealEstate() {
             </p>
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground hover-elevate active-elevate-2 font-semibold"
+              className="bg-primary text-primary-foreground hover-glow font-semibold"
               onClick={() => window.open("https://lvenestates.com", "_blank")}
               data-testid="button-visit-lven-footer"
             >

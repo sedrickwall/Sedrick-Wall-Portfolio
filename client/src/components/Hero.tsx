@@ -68,7 +68,7 @@ export default function Hero() {
           >
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground hover-elevate active-elevate-2 font-semibold px-8"
+              className="bg-primary text-primary-foreground hover-glow font-semibold px-8"
               onClick={() => scrollToSection("portfolio")}
               data-testid="button-view-work"
             >
@@ -78,7 +78,7 @@ export default function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary text-primary hover-elevate active-elevate-2 font-semibold px-8"
+              className="border-primary text-primary hover-glow font-semibold px-8"
               data-testid="button-download-resume"
             >
               <Download className="mr-2 h-5 w-5" />

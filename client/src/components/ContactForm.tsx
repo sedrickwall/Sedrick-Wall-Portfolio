@@ -134,7 +134,7 @@ export default function ContactForm() {
           <Button
             type="submit"
             size="lg"
-            className="w-full bg-primary text-primary-foreground hover-elevate active-elevate-2 font-semibold"
+            className="w-full bg-primary text-primary-foreground hover-glow font-semibold"
             data-testid="button-contact-submit"
           >
             Send Message
