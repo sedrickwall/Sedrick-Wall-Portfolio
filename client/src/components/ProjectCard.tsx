@@ -32,7 +32,7 @@ export default function ProjectCard({
       whileHover={{ y: -8 }}
       data-testid={`card-project-${title.toLowerCase().replace(/\s+/g, "-")}`}
     >
-      <Card className="overflow-hidden hover-elevate border-border h-full flex flex-col">
+      <Card className="overflow-hidden hover-glow border-border h-full flex flex-col">
         <div className="relative h-48 overflow-hidden group">
           <img
             src={image}

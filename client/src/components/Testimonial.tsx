@@ -37,7 +37,7 @@ export default function Testimonial({ testimonials }: TestimonialProps) {
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.3 }}
         >
-          <Card className="p-8 md:p-12 border-border" data-testid={`testimonial-${currentIndex}`}>
+          <Card className="p-8 md:p-12 border-border hover-glow" data-testid={`testimonial-${currentIndex}`}>
             <Quote className="w-12 h-12 text-primary mb-6" />
             <p className="text-lg md:text-xl italic text-foreground leading-relaxed mb-8">
               "{testimonials[currentIndex].content}"
@@ -66,7 +66,7 @@ export default function Testimonial({ testimonials }: TestimonialProps) {
           size="icon"
           variant="outline"
           onClick={handlePrevious}
-          className="border-primary hover-elevate"
+          className="border-primary hover-glow"
           data-testid="button-testimonial-previous"
         >
           <ChevronLeft className="h-5 w-5" />
@@ -89,7 +89,7 @@ export default function Testimonial({ testimonials }: TestimonialProps) {
           size="icon"
           variant="outline"
           onClick={handleNext}
-          className="border-primary hover-elevate"
+          className="border-primary hover-glow"
           data-testid="button-testimonial-next"
         >
           <ChevronRight className="h-5 w-5" />

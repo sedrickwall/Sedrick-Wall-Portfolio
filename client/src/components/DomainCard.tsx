@@ -20,7 +20,7 @@ export default function DomainCard({ title, description, icon: Icon, image, dela
       whileHover={{ y: -8 }}
       data-testid={`card-domain-${title.toLowerCase().replace(/\s+/g, "-")}`}
     >
-      <Card className="overflow-hidden hover-elevate border-border h-full group cursor-pointer">
+      <Card className="overflow-hidden hover-glow border-border h-full group cursor-pointer">
         <div className="relative h-48 overflow-hidden">
           <img
             src={image}

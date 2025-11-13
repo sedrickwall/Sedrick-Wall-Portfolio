@@ -25,7 +25,7 @@ export default function TechStack({ title, technologies }: TechStackProps) {
             viewport={{ once: true }}
             transition={{ delay: index * 0.05, duration: 0.3 }}
             whileHover={{ scale: 1.1 }}
-            className="flex flex-col items-center gap-3 p-4 bg-card border border-card-border rounded-lg hover-elevate cursor-pointer"
+            className="flex flex-col items-center gap-3 p-4 bg-card border border-card-border rounded-lg hover-glow cursor-pointer"
             data-testid={`tech-${tech.name.toLowerCase().replace(/\s+/g, "-")}`}
           >
             <div className="w-12 h-12 flex items-center justify-center text-3xl">

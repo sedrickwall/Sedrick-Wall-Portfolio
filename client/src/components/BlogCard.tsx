@@ -25,7 +25,7 @@ export default function BlogCard({ title, excerpt, date, tags, image, slug, dela
       data-testid={`card-blog-${slug}`}
     >
       <Link href={`/blog/${slug}`}>
-        <Card className="overflow-hidden hover-elevate border-border h-full cursor-pointer group">
+        <Card className="overflow-hidden hover-glow border-border h-full cursor-pointer group">
           <div className="relative h-48 overflow-hidden">
             <img
               src={image}
