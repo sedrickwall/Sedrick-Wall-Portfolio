@@ -1,0 +1,205 @@
+Build a premium personal brand website for Sedrick Wall, using Next.js, TailwindCSS, and Framer Motion, then prepare it for free deployment on Vercel.
+
+🔥 Overall Requirements
+
+Modern, premium, luxury aesthetic
+
+Colors: white (#FFFFFF), gold (#C9A86A), black (#000000), navy (#0A0E27)
+
+Fonts: Inter for body, Poppins or Satoshi for headings
+
+Responsive design on all devices
+
+Smooth scroll, micro-interactions, subtle cursor motion
+
+SEO metadata + OpenGraph tags on every page
+
+Clear CTAs
+
+📄 Pages to Build
+1. Home Page (One-Page Design)
+
+Sections (scrolling vertical layout):
+
+Hero
+
+Name: “Sedrick Wall”
+
+Subtitle: “Product Manager. Investor. Property Manager. Community Leader.”
+
+CTAs: “View My Work”, “Download Resume”
+
+Background motion: gold line animations + soft gradient
+
+Domains Scroll Section (4 cards)
+
+Product Leadership
+
+Real Estate Investor & Property Manager
+
+Community Leadership (Men on Mission)
+
+Life & Family
+
+Featured Projects Section
+
+Grid of 6 cards (placeholder images + text)
+
+Career Snapshot
+
+Metrics list (use placeholder values)
+
+Blog Preview
+
+Show 3 most recent posts
+
+About Preview
+
+Contact Section
+
+Email + LinkedIn + Resume download
+
+Use Framer Motion for fade-ins, parallax, and hover animations.
+
+2. /real-estate Page
+
+Header: “Real Estate Investing & Property Management”
+
+Overview section
+
+Grid of properties (placeholder data)
+
+CTA: “Visit LVEN Estates”
+
+Include sections for:
+
+Mid-term rentals
+
+Long-term rentals
+
+Strategy explanation
+
+3. /community Page
+
+Header: “Men on Mission – Brotherhood in Action”
+
+About the mission
+
+Photos grid (placeholder)
+
+Upcoming events (placeholder JSON data)
+
+CTA: “Visit MenOnMission.org”
+
+4. /blog Page
+
+Blog index reading from /content/blog/*.md files
+
+Layout: card grid with image, title, date, excerpt
+
+Clicking a post → dedicated blog page (dynamic route)
+
+Include tag filters:
+
+Product Management
+
+Real Estate
+
+Faith
+
+Fitness & Family
+
+Community
+
+📚 Blog System Requirements
+
+Add a /content/blog folder
+
+Each post is a .md file with frontmatter:
+
+---
+title: ""
+date: ""
+tags: []
+description: ""
+image: ""
+---
+
+
+Use gray-matter to parse
+
+SEO meta tags dynamically populated
+
+🧭 Navigation
+
+Top navbar:
+
+Home
+
+Experience (scrolls to section)
+
+Portfolio (scrolls to section)
+
+Real Estate
+
+Community
+
+Blog
+
+Contact (scrolls to footer)
+
+Sticky or fade-in on scroll (Framer Motion).
+
+🎨 Animations & UX
+
+Use Framer Motion for:
+
+Smooth section fade-ins
+
+Hover cards
+
+Slight parallax on hero text
+
+Custom cursor trail (optional)
+
+Soft gold glow when hovering links/buttons
+
+📁 Project Structure
+/app
+  /real-estate
+  /community
+  /blog
+    /[slug]
+  /components
+  /sections
+/content
+  /blog
+/public
+  /images
+  /icons
+
+🚀 Deployment
+
+Prepare for Vercel:
+
+Ensure next.config.js is standard
+
+Ensure public/ contains metadata images
+
+Add <Head> metadata to each page
+
+Optimize images using next/image
+
+📝 Deliverables
+
+Working Next.js project with Tailwind + Framer Motion
+
+Homepage one-pager with all sections
+
+/real-estate, /community, /blog pages
+
+Blog engine
+
+SEO metadata
+
+Ready-to-deploy Vercel configuration
