@@ -1,18 +1,19 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import DomainCard from "@/components/DomainCard";
 import Timeline from "@/components/Timeline";
-import ProjectCard from "@/components/ProjectCard";
 import TechStack from "@/components/TechStack";
 import Testimonial from "@/components/Testimonial";
-import ClientLogos from "@/components/ClientLogos";
 import MetricsCounter from "@/components/MetricsCounter";
 import BlogCard from "@/components/BlogCard";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import ThemeToggle from "@/components/ThemeToggle";
+import CaseStudyModal from "@/components/CaseStudyModal";
 import { motion } from "framer-motion";
 import { Briefcase, Home as HomeIcon, Users, Heart } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 // Import generated images
 import productImage from "@assets/generated_images/Product_Leadership_domain_card_b9ef109a.png";
@@ -86,36 +87,65 @@ export default function Home() {
     },
   ];
 
-  //todo: remove mock functionality - projects data
-  const projects = [
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState<any | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  //todo: remove mock functionality - case studies data
+  const caseStudies = [
     {
-      title: "Enterprise Analytics Platform",
-      description: "Built comprehensive analytics platform serving 10,000+ users with real-time data visualization and reporting.",
+      title: "Salesforce Workflow Redesign (Infosys)",
+      description: "Increased qualified pipeline by $12M+ by re-architecting lead routing, dashboards, and follow-ups.",
       image: project1,
-      tags: ["React", "Node.js", "PostgreSQL", "AWS"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/example",
+      tags: ["Salesforce", "CRM", "Process Optimization"],
+      problem: "Infosys faced inefficient lead routing and delayed follow-ups that were causing significant revenue leakage. Sales teams struggled with outdated dashboards and manual processes that slowed down qualification.",
+      solution: "Re-architected the entire Salesforce workflow by implementing automated lead routing logic, redesigning real-time dashboards for sales visibility, and creating smart follow-up sequences that ensured no lead fell through the cracks.",
+      impact: "Increased qualified pipeline by $12M+ annually. Reduced lead response time by 60%. Improved sales team productivity by 35% through automated workflows."
     },
     {
-      title: "LVEN Estates Website",
-      description: "Modern real estate platform showcasing property listings with advanced search and virtual tours.",
+      title: "Nucleus Network Engagement Lift",
+      description: "Improved feature engagement by 15% using A/B tests + analytics through Amplitude & GA.",
       image: project2,
-      tags: ["Next.js", "TailwindCSS", "Vercel"],
-      liveUrl: "https://lvenestates.com",
+      tags: ["Product Analytics", "A/B Testing", "User Engagement"],
+      problem: "Key features were underutilized despite strong product-market fit. User engagement metrics showed high drop-off rates at critical touchpoints.",
+      solution: "Implemented comprehensive A/B testing framework using Amplitude and Google Analytics. Ran 20+ experiments testing different UX flows, feature placement, and onboarding sequences. Used data-driven insights to optimize the user journey.",
+      impact: "Improved feature engagement by 15% across core workflows. Reduced time-to-value by 25%. Increased user retention by 12% through optimized onboarding."
     },
     {
-      title: "Men on Mission Portal",
-      description: "Community platform for event management, member directory, and resource sharing.",
+      title: "Johnson & Johnson Global Rebrand",
+      description: "Launched a global site for 20,000+ users, increasing adoption 40%.",
       image: project3,
-      tags: ["React", "Firebase", "TypeScript"],
-      liveUrl: "https://menonmission.org",
+      tags: ["Enterprise Launch", "Global Rollout", "Change Management"],
+      problem: "J&J needed to unify disparate systems across global teams while maintaining brand consistency. The existing platform had low adoption due to poor UX and fragmented workflows.",
+      solution: "Led the end-to-end launch of a unified global platform serving 20,000+ users. Coordinated cross-functional teams across multiple time zones, implemented phased rollout strategy, and created comprehensive training programs.",
+      impact: "Increased platform adoption by 40% within first 6 months. Achieved 95% user satisfaction score. Reduced operational costs by consolidating 5 legacy systems into one."
     },
     {
-      title: "Product Analytics Dashboard",
-      description: "Internal tool for tracking product metrics, user behavior, and business KPIs.",
+      title: "Toyota/Lexus Agile Transformation",
+      description: "Raised sprint velocity 20% and delivery consistency across distributed teams.",
       image: project4,
-      tags: ["Vue.js", "D3.js", "Express"],
+      tags: ["Agile", "Team Performance", "Process Improvement"],
+      problem: "Distributed teams across Toyota and Lexus struggled with inconsistent delivery timelines and low sprint velocity. Lack of standardized agile practices led to miscommunication and delays.",
+      solution: "Implemented agile transformation program including standardized sprint ceremonies, improved backlog grooming, and team alignment workshops. Created shared documentation and communication protocols for distributed teams.",
+      impact: "Raised sprint velocity by 20% across all teams. Improved on-time delivery from 65% to 90%. Enhanced cross-team collaboration and reduced blockers by 40%."
     },
+    {
+      title: "LVEN Estates Portfolio",
+      description: "Designed and managed mid-term rentals, ADUs, and long-term assets across TX & MN.",
+      image: project2,
+      tags: ["Real Estate", "Property Management", "Investment Strategy"],
+      problem: "Needed to build a sustainable real estate portfolio that balanced cash flow, appreciation, and operational efficiency. Market volatility required flexible strategies across different property types.",
+      solution: "Developed diversified portfolio strategy focusing on mid-term rentals (30-180 days), ADU development for additional income streams, and traditional long-term assets. Implemented systems for property management, tenant screening, and financial tracking.",
+      impact: "Built portfolio of 15+ properties across Texas and Minnesota. Achieved 95%+ occupancy rate. Generated consistent monthly cash flow while building long-term equity."
+    },
+    {
+      title: "Men on Mission",
+      description: "Built a faith-centered service group for men seeking purpose, character, and community.",
+      image: project3,
+      tags: ["Community Building", "Leadership", "Nonprofit"],
+      problem: "Men in the community lacked structured opportunities for authentic connection, character development, and service-oriented leadership rooted in faith.",
+      solution: "Founded Men on Mission as a faith-centered organization focused on brotherhood, service, and personal growth. Created regular gatherings, service projects, and accountability structures that help men become better leaders, husbands, and fathers.",
+      impact: "Grew from 5 founding members to 100+ active participants. Completed 50+ community service projects. Created lasting brotherhood and positive life transformations."
+    }
   ];
 
   //todo: remove mock functionality - tech stack data
@@ -162,22 +192,14 @@ export default function Home() {
     },
   ];
 
-  //todo: remove mock functionality - client logos
-  const clients = [
-    { name: "Tech Corp", logo: "🚀" },
-    { name: "Innovate Inc", logo: "💡" },
-    { name: "Digital Solutions", logo: "💻" },
-    { name: "Growth Partners", logo: "📈" },
-    { name: "Cloud Systems", logo: "☁️" },
-    { name: "Data Analytics", logo: "📊" },
-  ];
-
   //todo: remove mock functionality - metrics
   const metrics = [
-    { end: 50, suffix: "+", label: "Projects Delivered" },
-    { end: 10, suffix: "+", label: "Years Experience" },
-    { end: 100, suffix: "+", label: "Happy Clients" },
-    { end: 15, suffix: "M", prefix: "$", label: "Revenue Generated" },
+    { end: 40, suffix: "M", prefix: "$", label: "Revenue Protected" },
+    { end: 22, suffix: "%", label: "Retention Lift" },
+    { end: 200, suffix: "+", label: "Hours Saved/Year" },
+    { end: 3, suffix: "×", label: "NPS Increase" },
+    { end: 20, suffix: "%", label: "Sprint Velocity Rise" },
+    { end: 10, suffix: "+", label: "Global Countries" },
   ];
 
   //todo: remove mock functionality - blog posts
@@ -216,6 +238,65 @@ export default function Home() {
       <Navigation />
       <Hero />
 
+      {/* About Me Section */}
+      <section id="about" className="py-20 bg-card" data-testid="section-about">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative w-full max-w-md mx-auto">
+                <img
+                  src={headshot}
+                  alt="Sedrick Wall"
+                  className="rounded-lg shadow-lg w-full hover-glow"
+                  data-testid="img-about-headshot"
+                />
+                <motion.div
+                  className="absolute -z-10 top-4 left-4 w-full h-full border-2 border-primary rounded-lg"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 0.3 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="font-['Poppins'] text-4xl md:text-5xl font-bold mb-6">
+                Who I <span className="text-primary">Am</span>
+              </h2>
+              <div className="space-y-4 text-foreground leading-relaxed">
+                <p>
+                  I'm <span className="font-semibold">Sedrick</span> — a Product Manager, builder, and believer dedicated to creating long-term value in every area of life.
+                </p>
+                <p>
+                  <span className="font-semibold text-primary">My foundation is faith.</span><br />
+                  <span className="font-semibold text-primary">My passion is building.</span><br />
+                  <span className="font-semibold text-primary">My calling is service, leadership, and excellence.</span>
+                </p>
+                <p>
+                  I believe in using your gifts well — to serve people, create opportunity, and leave a legacy that matters.
+                </p>
+                <p>
+                  My work spans three worlds: <span className="font-semibold">tech</span>, where I design products that solve real problems; <span className="font-semibold">real estate</span>, where I create homes and long-term value; and <span className="font-semibold">community</span>, where I lead Men on Mission to bring service and brotherhood back to the forefront.
+                </p>
+                <p className="text-muted-foreground italic">
+                  Underneath all of it is my commitment to excellence, integrity, and using my gifts to build the Kingdom — through career, family, and service.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Domains Section */}
       <section id="domains" className="py-20 bg-background" data-testid="section-domains">
         <div className="max-w-7xl mx-auto px-6">
@@ -241,7 +322,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Portfolio Section */}
+      {/* Featured Work / Case Studies Section */}
       <section id="portfolio" className="py-20 bg-card" data-testid="section-portfolio">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -251,20 +332,69 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="font-['Poppins'] text-4xl md:text-5xl font-bold mb-4">
-              Featured <span className="text-primary">Projects</span>
+              Featured <span className="text-primary">Work</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              A selection of projects that showcase my work in product development and digital solutions.
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+              A collection of product launches, analytics wins, dashboards, real estate builds, and community initiatives.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <ProjectCard key={project.title} {...project} delay={index * 0.1} />
+            {caseStudies.map((study, index) => (
+              <motion.div
+                key={study.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                whileHover={{ y: -8 }}
+                data-testid={`card-case-study-${index}`}
+              >
+                <Card
+                  className="overflow-hidden hover-glow border-border h-full flex flex-col cursor-pointer"
+                  onClick={() => {
+                    setSelectedCaseStudy(study);
+                    setIsModalOpen(true);
+                  }}
+                >
+                  <div className="relative h-48 overflow-hidden group">
+                    <img
+                      src={study.image}
+                      alt={study.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-accent/80 to-transparent" />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="font-['Poppins'] text-xl font-semibold mb-3 text-foreground">
+                      {study.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">
+                      {study.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {study.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+      <CaseStudyModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        caseStudy={selectedCaseStudy}
+      />
 
       {/* Experience Timeline */}
       <section id="experience" className="py-20 bg-background" data-testid="section-experience">
@@ -287,9 +417,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Metrics Section */}
+      {/* Impact Stats Section */}
       <section className="py-20 bg-accent text-accent-foreground" data-testid="section-metrics">
         <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-['Poppins'] text-4xl md:text-5xl font-bold mb-4">
+              Impact <span className="text-primary">Stats</span>
+            </h2>
+          </motion.div>
           <MetricsCounter metrics={metrics} />
         </div>
       </section>
@@ -334,24 +474,6 @@ export default function Home() {
           </motion.div>
 
           <Testimonial testimonials={testimonials} />
-        </div>
-      </section>
-
-      {/* Client Logos */}
-      <section className="py-20 bg-background" data-testid="section-clients">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-['Poppins'] text-4xl md:text-5xl font-bold mb-4">
-              Trusted <span className="text-primary">Partners</span>
-            </h2>
-          </motion.div>
-
-          <ClientLogos logos={clients} />
         </div>
       </section>
 
