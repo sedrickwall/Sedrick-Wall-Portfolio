@@ -142,46 +142,6 @@ export default function Community() {
         </div>
       </section>
 
-      {/* Photos Grid */}
-      <section className="py-20 bg-background" data-testid="section-photos">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-['Poppins'] text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="text-primary">Community</span>
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Moments from our gatherings, service projects, and community events.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {[...Array(6)].map((_, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ scale: 1.05 }}
-                className="relative aspect-square overflow-hidden rounded-lg"
-                data-testid={`photo-${index}`}
-              >
-                <img
-                  src={communityImage}
-                  alt={`Community photo ${index + 1}`}
-                  className="w-full h-full object-cover hover-elevate"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Events Section */}
       <section className="py-20 bg-card" data-testid="section-events">
         <div className="max-w-7xl mx-auto px-6">
