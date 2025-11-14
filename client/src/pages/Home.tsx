@@ -28,7 +28,7 @@ import headshot from "@assets/sedrick-portrait.jpg";
 // Import testimonial avatars
 import testimonialAvatar1 from "@assets/stock_images/professional_busines_9778e3fa.jpg";
 import testimonialAvatar2 from "@assets/stock_images/professional_busines_97b6f644.jpg";
-import testimonialAvatar3 from "@assets/stock_images/professional_busines_92a32709.jpg";
+import testimonialAvatar3 from "@assets/stock_images/professional_busines_bd4a4d21.jpg";
 
 export default function Home() {
   //todo: remove mock functionality - domain data
