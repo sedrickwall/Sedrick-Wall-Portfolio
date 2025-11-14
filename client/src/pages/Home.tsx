@@ -25,6 +25,11 @@ import project3 from "@assets/generated_images/Portfolio_project_3_571f0d16.png"
 import project4 from "@assets/generated_images/Portfolio_project_4_c5a75a13.png";
 import headshot from "@assets/photo-output_2_1763146367509.jpeg";
 
+// Import testimonial avatars
+import testimonialAvatar1 from "@assets/stock_images/professional_busines_9778e3fa.jpg";
+import testimonialAvatar2 from "@assets/stock_images/professional_busines_97b6f644.jpg";
+import testimonialAvatar3 from "@assets/stock_images/professional_busines_92a32709.jpg";
+
 export default function Home() {
   //todo: remove mock functionality - domain data
   const domains = [
@@ -173,21 +178,21 @@ export default function Home() {
       role: "CEO",
       company: "Tech Innovators",
       content: "Sedrick's leadership transformed our product strategy. His ability to balance user needs with business goals is exceptional. He increased our conversion rate by 40% in just 6 months.",
-      avatar: headshot,
+      avatar: testimonialAvatar1,
     },
     {
       name: "Michael Chen",
       role: "VP Engineering",
       company: "Digital Solutions",
       content: "Working with Sedrick has been a game-changer. His strategic thinking and collaborative approach made our product launches incredibly successful. We reduced time-to-market by 50%.",
-      avatar: headshot,
+      avatar: testimonialAvatar2,
     },
     {
       name: "Emily Rodriguez",
       role: "Director of Operations",
       company: "Growth Partners",
       content: "Sedrick brings a unique combination of technical expertise and business acumen. His property management company runs like clockwork, and his community work is truly inspiring.",
-      avatar: headshot,
+      avatar: testimonialAvatar3,
     },
   ];
 
