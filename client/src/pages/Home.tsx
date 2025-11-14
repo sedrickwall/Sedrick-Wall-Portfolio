@@ -174,21 +174,21 @@ export default function Home() {
   //todo: remove mock functionality - testimonials data
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Sarah Lee",
       role: "CEO",
       company: "Tech Innovators",
       content: "Sedrick's leadership transformed our product strategy. His ability to balance user needs with business goals is exceptional. He increased our conversion rate by 40% in just 6 months.",
       avatar: testimonialAvatar1,
     },
     {
-      name: "Michael Chen",
+      name: "Michael Yang",
       role: "VP Engineering",
       company: "Digital Solutions",
       content: "Working with Sedrick has been a game-changer. His strategic thinking and collaborative approach made our product launches incredibly successful. We reduced time-to-market by 50%.",
       avatar: testimonialAvatar2,
     },
     {
-      name: "Emily Rodriguez",
+      name: "Emily Gomez",
       role: "Director of Operations",
       company: "Growth Partners",
       content: "Sedrick brings a unique combination of technical expertise and business acumen. His property management company runs like clockwork, and his community work is truly inspiring.",
