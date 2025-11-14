@@ -25,13 +25,18 @@ export default function Navigation() {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsMobileMenuOpen(false);
+  };
+
   const navLinks = [
     { label: "Home", path: "/", onClick: () => scrollToSection("hero") },
     { label: "Experience", path: "/", onClick: () => scrollToSection("experience") },
     { label: "Portfolio", path: "/", onClick: () => scrollToSection("portfolio") },
-    { label: "Real Estate", path: "/real-estate" },
-    { label: "Community", path: "/community" },
-    { label: "Blog", path: "/blog" },
+    { label: "Real Estate", path: "/real-estate", onClick: scrollToTop },
+    { label: "Community", path: "/community", onClick: scrollToTop },
+    { label: "Blog", path: "/blog", onClick: scrollToTop },
     { label: "Contact", path: "/", onClick: () => scrollToSection("contact") },
   ];
 
@@ -60,7 +65,7 @@ export default function Navigation() {
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <div key={link.label}>
-                  {link.onClick ? (
+                  {link.path === "/" ? (
                     <button
                       onClick={link.onClick}
                       className="text-foreground hover:text-primary transition-colors font-medium relative group"
@@ -70,7 +75,7 @@ export default function Navigation() {
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
                     </button>
                   ) : (
-                    <Link href={link.path} data-testid={`link-nav-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
+                    <Link href={link.path} onClick={link.onClick} data-testid={`link-nav-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
                       <span className={`text-foreground hover:text-primary transition-colors font-medium relative group ${location === link.path ? "text-primary" : ""}`}>
                         {link.label}
                         <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all ${location === link.path ? "w-full" : "w-0 group-hover:w-full"}`} />
@@ -107,7 +112,7 @@ export default function Navigation() {
             <div className="flex flex-col items-center gap-6 p-8">
               {navLinks.map((link) => (
                 <div key={link.label}>
-                  {link.onClick ? (
+                  {link.path === "/" ? (
                     <button
                       onClick={link.onClick}
                       className="text-2xl font-['Poppins'] font-semibold text-foreground hover:text-primary transition-colors"
@@ -116,7 +121,7 @@ export default function Navigation() {
                       {link.label}
                     </button>
                   ) : (
-                    <Link href={link.path} onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link href={link.path} onClick={link.onClick}>
                       <span className="text-2xl font-['Poppins'] font-semibold text-foreground hover:text-primary transition-colors">
                         {link.label}
                       </span>

@@ -9,7 +9,6 @@ import MetricsCounter from "@/components/MetricsCounter";
 import BlogCard from "@/components/BlogCard";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
-import ThemeToggle from "@/components/ThemeToggle";
 import CaseStudyModal from "@/components/CaseStudyModal";
 import { motion } from "framer-motion";
 import { Briefcase, Home as HomeIcon, Users, Heart } from "lucide-react";
@@ -232,9 +231,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="fixed top-6 right-6 z-50">
-        <ThemeToggle />
-      </div>
       <Navigation />
       <Hero />
 
