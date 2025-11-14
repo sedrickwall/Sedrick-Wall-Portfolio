@@ -62,30 +62,30 @@ export default function Home() {
   //todo: remove mock functionality - timeline data
   const timelineItems = [
     {
-      year: "2020 - Present",
+      year: "2019 - Present",
       title: "Senior Product Manager",
-      company: "Tech Innovations Inc.",
+      company: "Infosys",
       description: "Leading product strategy for enterprise SaaS platform. Increased user engagement by 60% and revenue by $5M annually.",
     },
     {
       year: "2018 - 2020",
       title: "Product Manager",
-      company: "Digital Solutions Co.",
+      company: "Pharmaceutical company",
       description: "Managed cross-functional teams of 15+ people. Launched 3 major features that acquired 50,000+ new users.",
     },
     {
       year: "2016 - 2018",
       title: "Associate Product Manager",
-      company: "StartUp Ventures",
+      company: "Mortgage company",
       description: "First product hire. Helped achieve product-market fit and secure Series A funding of $10M.",
     },
     {
-      year: "2015",
+      year: "2022",
       title: "Founded LVEN Estates",
       description: "Started real estate investment company focusing on mid-term and long-term rental properties.",
     },
     {
-      year: "2014",
+      year: "2018",
       title: "Launched Men on Mission",
       description: "Created community organization dedicated to empowering men through brotherhood and service.",
     },
@@ -106,7 +106,7 @@ export default function Home() {
       impact: "Increased qualified pipeline by $12M+ annually. Reduced lead response time by 60%. Improved sales team productivity by 35% through automated workflows."
     },
     {
-      title: "Nucleus Network Engagement Lift",
+      title: "Clinical Company Engagement Lift",
       description: "Improved feature engagement by 15% using A/B tests + analytics through Amplitude & GA.",
       image: project2,
       tags: ["Product Analytics", "A/B Testing", "User Engagement"],
@@ -115,20 +115,20 @@ export default function Home() {
       impact: "Improved feature engagement by 15% across core workflows. Reduced time-to-value by 25%. Increased user retention by 12% through optimized onboarding."
     },
     {
-      title: "Johnson & Johnson Global Rebrand",
+      title: "Pharmaceutical Company Global Rebrand",
       description: "Launched a global site for 20,000+ users, increasing adoption 40%.",
       image: project3,
       tags: ["Enterprise Launch", "Global Rollout", "Change Management"],
-      problem: "J&J needed to unify disparate systems across global teams while maintaining brand consistency. The existing platform had low adoption due to poor UX and fragmented workflows.",
+      problem: "The company needed to unify disparate systems across global teams while maintaining brand consistency. The existing platform had low adoption due to poor UX and fragmented workflows.",
       solution: "Led the end-to-end launch of a unified global platform serving 20,000+ users. Coordinated cross-functional teams across multiple time zones, implemented phased rollout strategy, and created comprehensive training programs.",
       impact: "Increased platform adoption by 40% within first 6 months. Achieved 95% user satisfaction score. Reduced operational costs by consolidating 5 legacy systems into one."
     },
     {
-      title: "Toyota/Lexus Agile Transformation",
+      title: "Automotive Manufacturer Agile Transformation",
       description: "Raised sprint velocity 20% and delivery consistency across distributed teams.",
       image: project4,
       tags: ["Agile", "Team Performance", "Process Improvement"],
-      problem: "Distributed teams across Toyota and Lexus struggled with inconsistent delivery timelines and low sprint velocity. Lack of standardized agile practices led to miscommunication and delays.",
+      problem: "Distributed teams across the company struggled with inconsistent delivery timelines and low sprint velocity. Lack of standardized agile practices led to miscommunication and delays.",
       solution: "Implemented agile transformation program including standardized sprint ceremonies, improved backlog grooming, and team alignment workshops. Created shared documentation and communication protocols for distributed teams.",
       impact: "Raised sprint velocity by 20% across all teams. Improved on-time delivery from 65% to 90%. Enhanced cross-team collaboration and reduced blockers by 40%."
     },
@@ -148,7 +148,7 @@ export default function Home() {
       tags: ["Community Building", "Leadership", "Nonprofit"],
       problem: "Men in the community lacked structured opportunities for authentic connection, character development, and service-oriented leadership rooted in faith.",
       solution: "Founded Men on Mission as a faith-centered organization focused on brotherhood, service, and personal growth. Created regular gatherings, service projects, and accountability structures that help men become better leaders, husbands, and fathers.",
-      impact: "Grew from 5 founding members to 100+ active participants. Completed 50+ community service projects. Created lasting brotherhood and positive life transformations."
+      impact: "Growing from 1 founding members to 20+ active participants. Completed 50+ community service projects. Created lasting brotherhood and positive life transformations."
     }
   ];
 
