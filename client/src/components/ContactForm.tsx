@@ -65,7 +65,7 @@ export default function ContactForm() {
           </a>
 
           <button
-            onClick={() => console.log("Downloading resume...")}
+            onClick={() => window.open("https://www.canva.com/design/DAG4s9Amo60/XRcliZgl-U-G4GPKL8PkkQ/view?utm_content=DAG4s9Amo60&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h65b1f2e3ae", "_blank")}
             className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group w-full"
             data-testid="button-download-resume-footer"
           >
