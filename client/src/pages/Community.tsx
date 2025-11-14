@@ -68,7 +68,7 @@ export default function Community() {
             className="text-center"
           >
             <h1 className="font-['Poppins'] text-5xl md:text-6xl font-bold mb-6" data-testid="text-community-title">
-              TheMenOnMission.org
+              Men On Mission
             </h1>
             <p className="text-2xl text-primary font-semibold mb-4">
               Brotherhood in Action
@@ -103,7 +103,7 @@ export default function Community() {
               Our <span className="text-primary">Mission</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              TheMenOnMission.org was founded in 2018 but initiated in 2025 with a simple but powerful vision: to create a space where 
+              Men on Mission was founded in 2018 but initiated in 2025 with a simple but powerful vision: to create a space where 
               men can grow together, challenge each other, and become better versions of themselves. We believe 
               that when men are grounded in faith, surrounded by authentic brotherhood, and committed to service, 
               they can transform not only their own lives but also their families and communities.
@@ -204,7 +204,7 @@ export default function Community() {
             </h2>
             <p className="text-accent-foreground/90 text-lg mb-8">
               Whether you're looking for accountability, brotherhood, or a place to serve, 
-              TheMenOnMission.org welcomes you. Visit our website to learn more and connect with us.
+              Men on Mission welcomes you. Visit our website to learn more and connect with us.
             </p>
             <Button
               size="lg"
