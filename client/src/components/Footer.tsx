@@ -58,7 +58,7 @@ export default function Footer() {
             <h4 className="font-['Poppins'] font-semibold mb-4">Connect</h4>
             <div className="flex gap-4">
               <a
-                href="https://linkedin.com/in/sedrickwall"
+                href="https://linkedin.com/in/sedrickw"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-accent-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -74,7 +74,7 @@ export default function Footer() {
                 <Mail className="w-5 h-5" />
               </a>
               <button
-                onClick={() => console.log("Download resume")}
+                onClick={() => window.open("https://www.canva.com/design/DAG4s9Amo60/XRcliZgl-U-G4GPKL8PkkQ/view?utm_content=DAG4s9Amo60&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h65b1f2e3ae", "_blank")}
                 className="w-10 h-10 bg-accent-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 data-testid="button-footer-resume"
               >

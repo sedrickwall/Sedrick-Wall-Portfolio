@@ -80,6 +80,7 @@ export default function Hero() {
               variant="outline"
               className="border-primary text-primary hover-glow font-semibold px-8"
               data-testid="button-download-resume"
+              onClick={() => window.open("https://www.canva.com/design/DAG4s9Amo60/XRcliZgl-U-G4GPKL8PkkQ/view?utm_content=DAG4s9Amo60&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h65b1f2e3ae", "_blank")}
             >
               <Download className="mr-2 h-5 w-5" />
               Download Resume
