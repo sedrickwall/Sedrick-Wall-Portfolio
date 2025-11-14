@@ -11,26 +11,20 @@ export default function Community() {
   //todo: remove mock functionality - events data
   const upcomingEvents = [
     {
-      title: "Monthly Brotherhood Gathering",
-      date: "November 20, 2025",
-      time: "7:00 PM - 9:00 PM",
-      location: "Community Center, Downtown",
-      description: "Join us for our monthly gathering focused on personal growth, accountability, and fellowship.",
+      title: "Operation Turkey",
+      date: "November 27, 2025",
+      time: "8:00 AM - 12:00 PM",
+      location: "Gilley's Dallas, Downtown",
+      description: "Join us Thanksgiving morning to prepare, package & deliver 5,000 meals to those in need across Dallas—all in just 4 hours!.",
     },
     {
       title: "Community Service Day",
-      date: "December 5, 2025",
-      time: "9:00 AM - 3:00 PM",
+      date: "Coming Soon",
+      time: "9:00 AM - 11:00 AM",
       location: "Local Food Bank",
       description: "Give back to our community by volunteering at the local food bank. Lunch provided.",
     },
-    {
-      title: "Leadership Workshop",
-      date: "December 15, 2025",
-      time: "10:00 AM - 2:00 PM",
-      location: "Business District Conference Room",
-      description: "Interactive workshop on developing leadership skills in business and personal life.",
-    },
+    
   ];
 
   const missionPoints = [
@@ -74,7 +68,7 @@ export default function Community() {
             className="text-center"
           >
             <h1 className="font-['Poppins'] text-5xl md:text-6xl font-bold mb-6" data-testid="text-community-title">
-              Men on Mission
+              TheMenOnMission.org
             </h1>
             <p className="text-2xl text-primary font-semibold mb-4">
               Brotherhood in Action
@@ -86,11 +80,11 @@ export default function Community() {
             <Button
               size="lg"
               className="bg-primary text-primary-foreground hover-glow font-semibold"
-              onClick={() => window.open("https://menonmission.org", "_blank")}
+              onClick={() => window.open("https://themenonmission.org", "_blank")}
               data-testid="button-visit-mom"
             >
               <ExternalLink className="mr-2 h-5 w-5" />
-              Visit MenOnMission.org
+              Visit TheMenOnMission.org
             </Button>
           </motion.div>
         </div>
@@ -109,7 +103,7 @@ export default function Community() {
               Our <span className="text-primary">Mission</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Men on Mission was founded in 2014 with a simple but powerful vision: to create a space where 
+              TheMenOnMission.org was founded in 2018 but initiated in 2025 with a simple but powerful vision: to create a space where 
               men can grow together, challenge each other, and become better versions of themselves. We believe 
               that when men are grounded in faith, surrounded by authentic brotherhood, and committed to service, 
               they can transform not only their own lives but also their families and communities.
@@ -210,16 +204,16 @@ export default function Community() {
             </h2>
             <p className="text-accent-foreground/90 text-lg mb-8">
               Whether you're looking for accountability, brotherhood, or a place to serve, 
-              Men on Mission welcomes you. Visit our website to learn more and connect with us.
+              TheMenOnMission.org welcomes you. Visit our website to learn more and connect with us.
             </p>
             <Button
               size="lg"
               className="bg-primary text-primary-foreground hover-glow font-semibold"
-              onClick={() => window.open("https://menonmission.org", "_blank")}
+              onClick={() => window.open("https://themenonmission.org", "_blank")}
               data-testid="button-visit-mom-footer"
             >
               <ExternalLink className="mr-2 h-5 w-5" />
-              Visit MenOnMission.org
+              Visit TheMenOnMission.org
             </Button>
           </motion.div>
         </div>

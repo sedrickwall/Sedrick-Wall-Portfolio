@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a premium personal brand website for Sedrick Wall, showcasing his work across four domains: Product Leadership, Real Estate Investment & Property Management, Community Leadership (Men on Mission), and Life & Family. The application is a full-stack TypeScript project built with React, Express, and PostgreSQL, featuring a modern, luxury aesthetic with interactive animations and smooth user experiences.
+This is a premium personal brand website for Sedrick Wall, showcasing his work across four domains: Product Leadership, Real Estate Investment & Property Management, Community Leadership (TheMenOnMission.org), and Life & Family. The application is a full-stack TypeScript project built with React, Express, and PostgreSQL, featuring a modern, luxury aesthetic with interactive animations and smooth user experiences.
 
 The site includes a one-page scrolling home layout with dedicated pages for Real Estate, Community, and Blog sections. It emphasizes narrative-driven storytelling with timeline components, interactive case studies, testimonials, and rich media presentations.
 

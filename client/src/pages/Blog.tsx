@@ -30,8 +30,8 @@ export default function Blog() {
       slug: "real-estate-strategies-2025",
     },
     {
-      title: "The Power of Community: Men on Mission Journey",
-      excerpt: "What started as a small group of men committed to personal growth has become a movement transforming lives. Here's the story of Men on Mission.",
+      title: "The Power of Community: TheMenOnMission.org Journey",
+      excerpt: "What started as a small group of men committed to personal growth has become a movement transforming lives. Here's the story of TheMenOnMission.org.",
       date: "October 28, 2025",
       tags: ["Community", "Faith", "Leadership"],
       image: project3,

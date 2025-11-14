@@ -47,7 +47,7 @@ export default function Home() {
     },
     {
       title: "Community Leadership",
-      description: "Empowering men through the Men on Mission movement, fostering brotherhood and positive change.",
+      description: "Empowering men through the TheMenOnMission.org movement, fostering brotherhood and positive change.",
       icon: Users,
       image: communityImage,
     },
@@ -86,7 +86,7 @@ export default function Home() {
     },
     {
       year: "2018",
-      title: "Launched Men on Mission",
+      title: "Launched TheMenOnMission.org",
       description: "Created community organization dedicated to empowering men through brotherhood and service.",
     },
   ];
@@ -142,12 +142,12 @@ export default function Home() {
       impact: "Built portfolio of 15+ properties across Texas and Minnesota. Achieved 95%+ occupancy rate. Generated consistent monthly cash flow while building long-term equity."
     },
     {
-      title: "Men on Mission",
+      title: "TheMenOnMission.org",
       description: "Built a faith-centered service group for men seeking purpose, character, and community.",
       image: project3,
       tags: ["Community Building", "Leadership", "Nonprofit"],
       problem: "Men in the community lacked structured opportunities for authentic connection, character development, and service-oriented leadership rooted in faith.",
-      solution: "Founded Men on Mission as a faith-centered organization focused on brotherhood, service, and personal growth. Created regular gatherings, service projects, and accountability structures that help men become better leaders, husbands, and fathers.",
+      solution: "Founded TheMenOnMission.org as a faith-centered organization focused on brotherhood, service, and personal growth. Created regular gatherings, service projects, and accountability structures that help men become better leaders, husbands, and fathers.",
       impact: "Growing from 1 founding members to 20+ active participants. Completed 50+ community service projects. Created lasting brotherhood and positive life transformations."
     }
   ];
@@ -225,7 +225,7 @@ export default function Home() {
       slug: "real-estate-strategies-2025",
     },
     {
-      title: "The Power of Community: Men on Mission Journey",
+      title: "The Power of Community: TheMenOnMission.org Journey",
       excerpt: "What started as a small group of men committed to personal growth has become a movement transforming lives.",
       date: "October 28, 2025",
       tags: ["Community", "Faith"],
@@ -287,7 +287,7 @@ export default function Home() {
                   I believe in using your gifts well — to serve people, create opportunity, and leave a legacy that matters.
                 </p>
                 <p>
-                  My work spans three worlds: <span className="font-semibold">tech</span>, where I design products that solve real problems; <span className="font-semibold">real estate</span>, where I create homes and long-term value; and <span className="font-semibold">community</span>, where I lead Men on Mission to bring service and brotherhood back to the forefront.
+                  My work spans three worlds: <span className="font-semibold">tech</span>, where I design products that solve real problems; <span className="font-semibold">real estate</span>, where I create homes and long-term value; and <span className="font-semibold">community</span>, where I lead TheMenOnMission.org to bring service and brotherhood back to the forefront.
                 </p>
                 <p className="text-muted-foreground italic">
                   Underneath all of it is my commitment to excellence, integrity, and using my gifts to build the Kingdom — through career, family, and service.
