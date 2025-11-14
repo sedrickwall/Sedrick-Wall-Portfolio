@@ -23,7 +23,7 @@ import project1 from "@assets/generated_images/Portfolio_project_1_758c837e.png"
 import project2 from "@assets/generated_images/Portfolio_project_2_d92035d8.png";
 import project3 from "@assets/generated_images/Portfolio_project_3_571f0d16.png";
 import project4 from "@assets/generated_images/Portfolio_project_4_c5a75a13.png";
-import headshot from "@assets/photo-output_2_1763146367509.jpeg";
+import headshot from "@assets/profile_1_1763146367512.png";
 
 // Import testimonial avatars
 import testimonialAvatar1 from "@assets/stock_images/professional_busines_9778e3fa.jpg";
