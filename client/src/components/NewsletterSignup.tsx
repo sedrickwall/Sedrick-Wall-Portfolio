@@ -27,32 +27,70 @@ export default function NewsletterSignup() {
 
     setIsSubmitting(true);
 
-    // TODO: Replace with actual Mailchimp integration
-    // Option 1 - Embedded Form Submission:
-    //   1. Go to Mailchimp → Audience → Signup forms → Embedded forms
-    //   2. Copy the form action URL (e.g., https://YOUR-DOMAIN.us1.list-manage.com/subscribe/post?u=USER_ID&id=LIST_ID)
-    //   3. Create FormData and POST to that URL
-    //
-    // Option 2 - Marketing API:
-    //   1. Get API key from Mailchimp
-    //   2. Use /lists/{list_id}/members endpoint
-    //   3. See: https://mailchimp.com/developer/marketing/api/list-members/add-member-to-list/
-    //
-    // For now, this is a mock implementation for demonstration
+    // Build Mailchimp JSONP URL
+    const mailchimpUrl = 'https://gmail.us2.list-manage.com/subscribe/post-json';
+    const params = new URLSearchParams({
+      u: '25d6342f55d2f1c613e226939',
+      id: '47d35b84ff',
+      f_id: '00e740e0f0',
+      EMAIL: email,
+      ...(name && { FNAME: name }),
+    });
 
-    setTimeout(() => {
+    // Create a unique callback name
+    const callbackName = `mailchimpCallback_${Date.now()}`;
+    const url = `${mailchimpUrl}?${params.toString()}&c=${callbackName}`;
+
+    // Define the callback function
+    (window as any)[callbackName] = (data: any) => {
+      // Clean up
+      delete (window as any)[callbackName];
+      const script = document.getElementById(callbackName);
+      if (script) {
+        document.body.removeChild(script);
+      }
+
       setIsSubmitting(false);
-      setIsSubscribed(true);
-      setEmail("");
-      setName("");
 
+      // Check response
+      if (data.result === 'success') {
+        setIsSubscribed(true);
+        setEmail("");
+        setName("");
+
+        toast({
+          title: "Successfully subscribed!",
+          description: "Thank you for subscribing to the newsletter. Check your inbox for a confirmation email.",
+        });
+
+        setTimeout(() => setIsSubscribed(false), 5000);
+      } else {
+        // Handle errors (e.g., already subscribed, invalid email)
+        const message = data.msg || "There was a problem subscribing. Please try again.";
+        toast({
+          title: "Subscription issue",
+          description: message.replace(/<[^>]*>/g, ''), // Strip HTML tags from error message
+          variant: "destructive",
+        });
+      }
+    };
+
+    // Create and append script tag for JSONP
+    const script = document.createElement('script');
+    script.id = callbackName;
+    script.src = url;
+    script.onerror = () => {
+      delete (window as any)[callbackName];
+      setIsSubmitting(false);
+      
       toast({
-        title: "Successfully subscribed!",
-        description: "Thank you for subscribing to the newsletter. Check your inbox for a confirmation email.",
+        title: "Connection error",
+        description: "Unable to connect to the newsletter service. Please check your internet connection.",
+        variant: "destructive",
       });
-
-      setTimeout(() => setIsSubscribed(false), 3000);
-    }, 500);
+    };
+    
+    document.body.appendChild(script);
   };
 
   return (
