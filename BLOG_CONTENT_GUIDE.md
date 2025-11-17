@@ -4,21 +4,22 @@ This guide explains how to add, edit, and manage blog posts on your portfolio we
 
 ## Current System Design
 
-The blog uses a **hybrid approach** for ease of use and performance:
-- **Content**: Written in Markdown files (easy to edit)
-- **Metadata**: Registered in a TypeScript file (enables fast loading and type safety)
+The blog uses a **bundled approach** for reliability on static deployments:
+- **Content**: Written in Markdown files, bundled into JavaScript at build time
+- **Metadata**: Registered in a TypeScript file for fast loading and type safety
 
-This means adding a new post requires **two files**:
-1. Your markdown content file
-2. A metadata entry in `metadata.ts`
+This means adding a new post requires **three simple steps**:
+1. Create your markdown content file in `client/src/content/blog/`
+2. Import it in `client/src/pages/BlogPost.tsx`
+3. Add metadata entry in `content/blog/metadata.ts`
 
-While this requires touching one code file, it's a simple copy-paste operation and provides better performance than parsing all markdown files on every page load.
+This approach ensures your blog works perfectly on Vercel and other static hosting platforms by bundling the markdown content directly into your JavaScript bundle.
 
 ## Adding a New Blog Post
 
 ### Step 1: Create the Markdown File
 
-1. Create a new `.md` file in `client/public/content/blog/` directory
+1. Create a new `.md` file in `client/src/content/blog/` directory
 2. Use a URL-friendly filename (lowercase, hyphens instead of spaces)
    - Example: `my-new-post.md` (not `My New Post.md`)
 
@@ -89,7 +90,22 @@ console.log(example);
 
 ### Step 4: Register the Post (Important!)
 
-Add your new post to `content/blog/metadata.ts` - this is the only code file you need to edit:
+You need to update **two code files**:
+
+#### A. Add import in `client/src/pages/BlogPost.tsx`:
+
+```typescript
+// Add this with the other import statements at the top
+import myNewPostRaw from "../content/blog/my-new-post.md?raw";
+
+// Then add to the blogPostContent object
+const blogPostContent: Record<string, string> = {
+  "my-new-post": myNewPostRaw,  // slug: variable name
+  // ... existing posts
+};
+```
+
+#### B. Add metadata in `content/blog/metadata.ts`:
 
 ```typescript
 export const blogPosts: BlogPostMetadata[] = [

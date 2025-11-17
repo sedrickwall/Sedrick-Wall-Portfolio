@@ -6,6 +6,20 @@
     {
       "source": "/(.*)",
       "destination": "/index.html"
+<<<<<<< HEAD
+=======
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+>>>>>>> 091f89f (Update blog system to bundle markdown content into JavaScript)
     }
   ]
 }

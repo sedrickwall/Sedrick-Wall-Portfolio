@@ -15,6 +15,30 @@ import rehypeHighlight from "rehype-highlight";
 import { blogPosts } from "../../../content/blog/metadata";
 import "highlight.js/styles/github-dark.css";
 
+import buildingScalableTeamsRaw from "../content/blog/building-scalable-product-teams.md?raw";
+import productLedGrowthRaw from "../content/blog/product-led-growth-framework.md?raw";
+import realEstateStrategiesRaw from "../content/blog/real-estate-strategies-2025.md?raw";
+import powerOfCommunityRaw from "../content/blog/power-of-community.md?raw";
+import faithInBusinessRaw from "../content/blog/faith-in-business.md?raw";
+import balancingVenturesRaw from "../content/blog/balancing-multiple-ventures.md?raw";
+
+const blogPostContent: Record<string, string> = {
+  "building-scalable-product-teams": buildingScalableTeamsRaw,
+  "product-led-growth-framework": productLedGrowthRaw,
+  "real-estate-strategies-2025": realEstateStrategiesRaw,
+  "power-of-community": powerOfCommunityRaw,
+  "faith-in-business": faithInBusinessRaw,
+  "balancing-multiple-ventures": balancingVenturesRaw,
+};
+
+function extractContent(text: string): string {
+  const frontmatterMatch = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+  if (frontmatterMatch) {
+    return frontmatterMatch[2].trim();
+  }
+  return text;
+}
+
 export default function BlogPost() {
   const params = useParams<{ slug: string }>();
   const [content, setContent] = useState("");
@@ -27,15 +51,11 @@ export default function BlogPost() {
 
     const loadPost = async () => {
       try {
-        const response = await fetch(`/content/blog/${params.slug}.md`);
-        const text = await response.text();
-        
-        const frontmatterMatch = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
-        
-        if (frontmatterMatch) {
-          setContent(frontmatterMatch[2].trim());
+        const rawContent = blogPostContent[params.slug];
+        if (rawContent) {
+          setContent(extractContent(rawContent));
         } else {
-          setContent(text);
+          console.error(`Blog post not found: ${params.slug}`);
         }
       } catch (error) {
         console.error("Error loading blog post:", error);
