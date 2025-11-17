@@ -27,6 +27,19 @@ export default function NewsletterSignup() {
 
     setIsSubmitting(true);
 
+    // TODO: Replace with actual Mailchimp integration
+    // Option 1 - Embedded Form Submission:
+    //   1. Go to Mailchimp → Audience → Signup forms → Embedded forms
+    //   2. Copy the form action URL (e.g., https://YOUR-DOMAIN.us1.list-manage.com/subscribe/post?u=USER_ID&id=LIST_ID)
+    //   3. Create FormData and POST to that URL
+    //
+    // Option 2 - Marketing API:
+    //   1. Get API key from Mailchimp
+    //   2. Use /lists/{list_id}/members endpoint
+    //   3. See: https://mailchimp.com/developer/marketing/api/list-members/add-member-to-list/
+    //
+    // For now, this is a mock implementation for demonstration
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubscribed(true);
@@ -127,39 +140,6 @@ export default function NewsletterSignup() {
             </p>
           </Card>
         </motion.div>
-
-        {/* Mailchimp Integration Instructions */}
-        <div className="mt-8 p-6 bg-accent/5 rounded-lg border border-border">
-          <h3 className="font-['Poppins'] font-semibold mb-3 text-foreground">
-            📬 To Connect Real Mailchimp:
-          </h3>
-          <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-            <li>
-              Go to Mailchimp → Audience → Signup forms → Embedded forms
-            </li>
-            <li>
-              Copy the form action URL from the generated code
-            </li>
-            <li>
-              Replace the <code className="bg-accent px-1 rounded text-primary">handleSubmit</code> function to POST to that URL
-            </li>
-            <li>
-              Or use the Mailchimp Marketing API with your API key (see{" "}
-              <a
-                href="https://mailchimp.com/developer/marketing/api/list-members/add-member-to-list/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                documentation
-              </a>
-              )
-            </li>
-          </ol>
-          <p className="text-sm text-muted-foreground mt-3">
-            <strong>Current state:</strong> Form validates and shows success message, but doesn't actually submit to Mailchimp yet.
-          </p>
-        </div>
       </div>
     </section>
   );
