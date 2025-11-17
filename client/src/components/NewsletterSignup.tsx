@@ -39,7 +39,7 @@ export default function NewsletterSignup() {
       });
 
       setTimeout(() => setIsSubscribed(false), 3000);
-    }, 1500);
+    }, 500);
   };
 
   return (

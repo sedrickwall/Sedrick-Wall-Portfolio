@@ -12,14 +12,12 @@ import { Calendar, ArrowLeft, Linkedin, Mail } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
-import matter from "gray-matter";
 import { blogPosts } from "../../../content/blog/metadata";
 import "highlight.js/styles/github-dark.css";
 
 export default function BlogPost() {
   const params = useParams<{ slug: string }>();
   const [content, setContent] = useState("");
-  const [frontmatter, setFrontmatter] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   const postMetadata = blogPosts.find(post => post.slug === params.slug);
@@ -31,9 +29,14 @@ export default function BlogPost() {
       try {
         const response = await fetch(`/content/blog/${params.slug}.md`);
         const text = await response.text();
-        const { data, content: markdownContent } = matter(text);
-        setFrontmatter(data);
-        setContent(markdownContent);
+        
+        const frontmatterMatch = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+        
+        if (frontmatterMatch) {
+          setContent(frontmatterMatch[2].trim());
+        } else {
+          setContent(text);
+        }
       } catch (error) {
         console.error("Error loading blog post:", error);
       } finally {
@@ -55,7 +58,7 @@ export default function BlogPost() {
     );
   }
 
-  if (!frontmatter || !postMetadata) {
+  if (!postMetadata) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
@@ -91,7 +94,7 @@ export default function BlogPost() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex flex-wrap gap-2 mb-6">
-              {frontmatter.tags.map((tag: string) => (
+              {postMetadata.tags.map((tag: string) => (
                 <Badge key={tag} variant="secondary" data-testid={`badge-tag-${tag.toLowerCase().replace(/\s+/g, "-")}`}>
                   {tag}
                 </Badge>
@@ -99,7 +102,7 @@ export default function BlogPost() {
             </div>
 
             <h1 className="font-['Poppins'] text-4xl md:text-5xl font-bold mb-6 text-foreground" data-testid="text-post-title">
-              {frontmatter.title}
+              {postMetadata.title}
             </h1>
 
             <div className="flex items-center gap-6 text-muted-foreground mb-8">
@@ -108,7 +111,7 @@ export default function BlogPost() {
                   <AvatarFallback>SW</AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-medium text-foreground">{frontmatter.author}</p>
+                  <p className="font-medium text-foreground">{postMetadata.author}</p>
                   <div className="flex items-center gap-2 text-sm">
                     <Calendar className="w-4 h-4" />
                     <span data-testid="text-post-date">{postMetadata.date}</span>
@@ -132,7 +135,7 @@ export default function BlogPost() {
             >
               <img
                 src={postMetadata.image}
-                alt={frontmatter.title}
+                alt={postMetadata.title}
                 className="w-full h-full object-cover"
                 data-testid="img-post-featured"
               />
@@ -185,7 +188,7 @@ export default function BlogPost() {
               <AvatarFallback className="text-2xl">SW</AvatarFallback>
             </Avatar>
             <div className="flex-1">
-              <h3 className="font-['Poppins'] text-2xl font-bold mb-3">About {frontmatter.author}</h3>
+              <h3 className="font-['Poppins'] text-2xl font-bold mb-3">About {postMetadata.author}</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Product leader, real estate investor, and community builder. Passionate about creating systems that scale,
                 building meaningful relationships, and integrating faith with business.

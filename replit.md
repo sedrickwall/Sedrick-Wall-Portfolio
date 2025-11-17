@@ -42,7 +42,10 @@ Preferred communication style: Simple, everyday language.
 - Home: Single-page scrolling design with hero, domains, timeline, portfolio, testimonials, and contact sections
 - Real Estate: Dedicated page showcasing investment strategies and property management
 - Community: Page highlighting Men on Mission movement and events
-- Blog: Post listing with filtering and mock data structure
+- Blog: Full-featured markdown-based blog system with category filtering and newsletter signup
+  - Blog listing page (`/blog`) with 6 published posts and category filters
+  - Individual post pages (`/blog/:slug`) with markdown rendering
+  - Newsletter signup component (ready for Mailchimp integration)
 
 ### Backend Architecture
 
@@ -96,6 +99,64 @@ Preferred communication style: Simple, everyday language.
 - Protected API routes for content management
 - Public read access, authenticated write access pattern
 
+## Blog System Architecture
+
+### Overview
+Full-featured markdown blog system that allows easy content updates without code changes. Built for static deployment with all posts stored as markdown files.
+
+### Content Management
+**Blog Post Storage:**
+- Markdown files in `client/public/content/blog/`
+- Frontmatter metadata at top of each file (title, date, excerpt, tags, author)
+- Metadata registry in `content/blog/metadata.ts` for fast listing and filtering
+- 6 initial posts covering Product Management, Real Estate, Community, Faith, and Leadership
+
+**Post Structure:**
+```markdown
+---
+title: "Post Title"
+date: "2025-11-17"
+excerpt: "Brief summary"
+tags: ["Category1", "Category2"]
+image: "project1"
+author: "Sedrick Wall"
+---
+
+# Post Content
+Markdown content here...
+```
+
+### Components
+- **Blog.tsx** - Main listing page with category filters and newsletter signup
+- **BlogPost.tsx** - Individual post renderer with markdown processing
+- **BlogCard.tsx** - Post preview cards with hover animations
+- **NewsletterSignup.tsx** - Email subscription component (Mailchimp-ready)
+
+### Features
+- Category filtering (Product Management, Real Estate, Faith, Community, Leadership, etc.)
+- Responsive grid layout (1/2/3 columns based on screen size)
+- Syntax highlighting for code blocks (via highlight.js)
+- GitHub Flavored Markdown support (tables, task lists, strikethrough)
+- Author bio section on each post
+- Newsletter signup with success validation
+- Smooth animations and transitions
+- SEO-friendly meta structure
+
+### Adding New Posts
+1. Create `.md` file in `client/public/content/blog/` with frontmatter
+2. Register metadata in `content/blog/metadata.ts` (simple TypeScript entry)
+3. Deploy - changes auto-deploy on git push
+
+**Note:** While content is written in markdown, new posts require a one-line registration in `metadata.ts`. This is a design trade-off for performance and type safety. See `BLOG_CONTENT_GUIDE.md` for detailed instructions.
+
+### Newsletter Integration
+Current implementation provides UI and validation. To connect Mailchimp:
+1. Get Mailchimp embedded form URL or API key
+2. Update `handleSubmit` in `NewsletterSignup.tsx`
+3. POST form data to Mailchimp endpoint
+
+Instructions included in component and guide.
+
 ## External Dependencies
 
 ### Core Framework Dependencies
@@ -141,7 +202,14 @@ Preferred communication style: Simple, everyday language.
 - **Google Fonts** - Inter and Poppins loaded via CDN
 - **Generated Images** - Placeholder images stored in `/attached_assets/generated_images/`
 
+### Blog System
+- **react-markdown** - Markdown rendering with GitHub Flavored Markdown support
+- **remark-gfm** - Tables, strikethrough, task lists, autolinks
+- **rehype-highlight** - Syntax highlighting for code blocks
+- **gray-matter** - Frontmatter parsing (client-side manual implementation to avoid Buffer dependency)
+
 ### Build Output
 - Client builds to `/dist/public`
 - Server bundles to `/dist/index.js`
 - Production start command runs bundled server code
+- Static blog posts served from `/client/public/content/blog/`
