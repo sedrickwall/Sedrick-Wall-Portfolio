@@ -218,3 +218,5 @@ Focus on:
 
 You don’t win by predicting the market.  
 You win by **building a strategy that works in any market**.
+
+---
