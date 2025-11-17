@@ -7,160 +7,81 @@ image: "project1"
 author: "Sedrick Wall"
 ---
 
-# Building Scalable Product Teams  
-How to structure, align, and empower people to deliver great products at any size.
+# Building Scalable Product Teams
 
-When companies grow fast, the pressure hits the product team first. More customers. More features. More stakeholders. More complexity.  
+Over the past decade, I've had the privilege of leading product teams through some of the most challenging growth phases a company can experience. What I've learned is counterintuitive: **the best product leaders don't just build great products—they build systems that enable teams to build great products without them**.
 
-After working across enterprise, healthcare, and automotive systems, I’ve learned that **scaling a product team has very little to do with adding headcount** and almost everything to do with building *clarity, systems, and rhythms* that help people do their best work.
+## The Foundation: Clarity Over Control
 
-Below is a simple, practical framework anyone can understand—whether you're a senior Product Manager or someone brand new to the field.
+The biggest mistake I see product leaders make is trying to maintain control as the team scales. It doesn't work. Instead, focus on creating crystal-clear frameworks:
 
----
+### 1. **Define Your Product Principles**
 
-## **1. Start With Clarity, Not Headcount**
-Most teams don't fail because they’re too small.  
-They fail because people don’t know:
+Your team needs a north star that isn't you. At my last company, we established three non-negotiable principles:
 
-- What success actually looks like  
-- Who owns what  
-- How decisions get made  
-- What problems matter most right now  
+- **Customer obsession over feature completion**
+- **Measurable impact over perfect execution**
+- **Transparent communication over politics**
 
-A scalable product team starts with **clear roles, clear goals, and clear priorities**.
+These weren't just words on a wall. Every major decision was filtered through these principles, empowering team members to make calls independently.
 
-Ask your team these three questions:
+### 2. **Implement Structured Decision-Making**
 
-1. *“What problem are we solving right now?”*  
-2. *“How will we know we succeeded?”*  
-3. *“Who makes the final call when we disagree?”*
+Create decision frameworks that scale:
 
-If they can’t answer, you don’t have a resourcing problem—you have a clarity problem.
+```
+High Impact + High Confidence = Execute immediately
+High Impact + Low Confidence = Run experiments
+Low Impact + High Confidence = Delegate to team leads
+Low Impact + Low Confidence = Deprioritize
+```
 
----
+This simple matrix eliminated 80% of the "should we" meetings that plague growing teams.
 
-## **2. Build Repeatable Systems (Your Team’s “Operating Manual”)**
-Scaling breaks teams because **tribal knowledge doesn’t scale**.
+## Hiring for the Next Phase, Not Just Today
 
-Create lightweight systems everyone can understand:
+The hardest lesson: the person who's perfect for your 10-person team might struggle at 50 people. Here's how I approach hiring:
 
-### ✔ Weekly Rituals  
-- Backlog refinement  
-- Sprint planning  
-- Daily standup  
-- Weekly product sync with leadership  
+### Look for "Multipliers," Not Just "Doers"
 
-### ✔ Written Processes  
-- How features get prioritized  
-- How discovery is done  
-- How releases happen  
-- How data gets used in decisions  
+Ask these questions in interviews:
+- "Tell me about a time you made someone else more effective"
+- "How do you share knowledge with your team?"
+- "What systems have you put in place that outlasted your time in a role?"
 
-These don’t need to be perfect—they just need to be **consistent**.
+The best candidates talk about enabling others, not just their personal achievements.
 
-Systems create **predictability**, which creates **trust**, which creates **speed**.
+## Creating Feedback Loops That Scale
 
----
+Weekly 1:1s don't scale. Neither do all-hands meetings where only executives talk. What does scale:
 
-## **3. Align Product, Engineering, and Design Around One Story**
-High-performing product teams speak one shared language:  
-**the user problem**.
+### 1. **Asynchronous Updates**
 
-Scaling becomes almost effortless when:
+We implemented a simple Slack workflow:
+- Every Friday, each PM shares three things: Wins, Challenges, Learnings
+- Anyone can react or comment
+- No meetings required
 
-- Engineers know *why* they’re building something  
-- Designers know *who* they’re designing for  
-- PMs know *what* matters most  
-- Leadership knows *how* success will be measured  
+This created transparency and peer learning without adding meeting overhead.
 
-Create a **single source of truth** (PRDs, product briefs, Notion, Confluence—anywhere) that answers:  
-- What is the user trying to do?  
-- What is blocking them?  
-- What would a better experience look like?  
-- How will we measure success?  
+### 2. **Rotating Decision Reviews**
 
-When everyone sees the same story, alignment follows.
+Once a month, a different team presents their biggest decision to the entire product org. Not for approval—for learning. This builds judgment across the team faster than any training program.
 
----
+## The Metrics That Actually Matter
 
-## **4. Make Decisions With Data, Not Opinions**
-Small teams can get away with gut instinct.  
-Scaling teams cannot.
+Forget story points and velocity. Focus on:
 
-To scale, you need:
+- **Time to independent contribution** for new hires (target: <30 days)
+- **Decision-making autonomy** (% of decisions made without escalation)
+- **Cross-functional satisfaction scores** (how happy are eng, design, and sales working with product?)
 
-- Instrumented funnels  
-- Clear KPIs  
-- Post-release measurement  
-- A/B tests  
-- Insights loops from users  
+## The Uncomfortable Truth
 
-Data doesn’t replace conversations—it **focuses** them.
+Building a scalable team means making yourself less necessary. That's the goal. If your team can't function without you in the room, you haven't built a team—you've built a dependency.
 
-When teams start using data to guide the roadmap, debate becomes healthier and outcomes become faster.
+The most fulfilling part of my career hasn't been the products I've shipped. It's watching former team members go on to lead their own successful product orgs, using frameworks we built together.
 
 ---
 
-## **5. Empower Teams, Don’t Micromanage**
-The fastest scaling companies are the ones where leadership sets the **direction**, and teams choose the **path**.
-
-Give teams autonomy over:
-
-- How they approach solutions  
-- How they break down work  
-- How they communicate  
-- How they experiment  
-
-As long as the team is aligned on *the outcome*, they should own *the execution*.
-
-Great teams don’t scale because they’re large.  
-They scale because they’re **trusted**.
-
----
-
-## **6. Hire for Versatility, Not Just Skill**
-When you do need to add people, hire:
-
-- **Generalists** who can adapt  
-- **Strategic thinkers** who can zoom out  
-- **Strong communicators** who can align teams  
-- **Curious people** who ask the right questions  
-- **Owners**, not passengers  
-
-Scaling isn’t about hiring more people.  
-It’s about hiring the *right* people who make the team better.
-
----
-
-## **7. Keep the Culture Tight**
-Scaling often breaks culture faster than it breaks process.
-
-Protect these at all costs:
-
-- Psychological safety  
-- Radical clarity  
-- Honest retros  
-- Accountability without blame  
-- A bias toward learning  
-- A bias toward outcomes, not activity  
-
-The culture you build at 5 people determines the culture you get at 50.
-
----
-
-## **Final Takeaway**  
-A scalable product team isn’t built through hiring—it’s built through:
-
-- Clear focus  
-- Strong systems  
-- Shared language  
-- Data-driven decisions  
-- Empowered teams  
-- Great people  
-- Healthy culture  
-
-If you build these foundations early, your team doesn’t just grow.  
-**It grows with purpose, speed, and stability.**
-
----
-
+**What frameworks have you found most effective for scaling product teams? I'd love to hear your experiences.**

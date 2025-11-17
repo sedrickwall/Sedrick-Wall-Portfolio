@@ -102,12 +102,11 @@ Preferred communication style: Simple, everyday language.
 ## Blog System Architecture
 
 ### Overview
-Full-featured markdown blog system optimized for Vercel deployment. Blog posts are written in markdown and bundled into JavaScript at build time for reliable static deployment.
+Full-featured markdown blog system that allows easy content updates without code changes. Built for static deployment with all posts stored as markdown files.
 
 ### Content Management
 **Blog Post Storage:**
-- Markdown files in `client/src/content/blog/` (bundled at build time using Vite's ?raw imports)
-- Imported in `client/src/pages/BlogPost.tsx` to bundle content into JavaScript
+- Markdown files in `client/public/content/blog/`
 - Frontmatter metadata at top of each file (title, date, excerpt, tags, author)
 - Metadata registry in `content/blog/metadata.ts` for fast listing and filtering
 - 6 initial posts covering Product Management, Real Estate, Community, Faith, and Leadership
@@ -144,12 +143,11 @@ Markdown content here...
 - SEO-friendly meta structure
 
 ### Adding New Posts
-1. Create `.md` file in `client/src/content/blog/` with frontmatter
-2. Import in `client/src/pages/BlogPost.tsx` using `?raw` suffix
-3. Register metadata in `content/blog/metadata.ts`
-4. Deploy - changes auto-deploy on git push
+1. Create `.md` file in `client/public/content/blog/` with frontmatter
+2. Register metadata in `content/blog/metadata.ts` (simple TypeScript entry)
+3. Deploy - changes auto-deploy on git push
 
-**Note:** The bundled approach ensures blog posts work reliably on Vercel by including markdown content directly in the JavaScript bundle, avoiding static file serving issues. See `BLOG_CONTENT_GUIDE.md` for detailed instructions.
+**Note:** While content is written in markdown, new posts require a one-line registration in `metadata.ts`. This is a design trade-off for performance and type safety. See `BLOG_CONTENT_GUIDE.md` for detailed instructions.
 
 ### Newsletter Integration
 Current implementation provides UI and validation. To connect Mailchimp:
