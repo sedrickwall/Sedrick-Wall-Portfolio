@@ -35,7 +35,7 @@ export default function ContactForm() {
 
         <div className="space-y-4">
           <a
-            href="mailto:sedrick@example.com"
+            href="mailto:info@sedrickwall.com"
             className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
             data-testid="link-email"
           >
@@ -44,12 +44,12 @@ export default function ContactForm() {
             </div>
             <div>
               <p className="font-medium">Email</p>
-              <p className="text-sm text-muted-foreground">sedrick@example.com</p>
+              <p className="text-sm text-muted-foreground">info@sedrickwall.com</p>
             </div>
           </a>
 
           <a
-            href="https://linkedin.com/in/sedrickwall"
+            href="https://linkedin.com/in/sedrickw"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
