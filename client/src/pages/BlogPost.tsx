@@ -195,7 +195,7 @@ export default function BlogPost() {
               </p>
               <div className="flex gap-4">
                 <a
-                  href="https://www.linkedin.com/in/sedrickwall"
+                  href="https://www.linkedin.com/in/sedrickw"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
@@ -204,7 +204,7 @@ export default function BlogPost() {
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a
-                  href="mailto:sedrick@example.com"
+                  href="mailto:info@sedrickwall.com"
                   className="text-muted-foreground hover:text-primary transition-colors"
                   data-testid="link-author-email"
                 >
